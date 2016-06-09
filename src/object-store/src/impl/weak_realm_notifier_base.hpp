@@ -19,8 +19,9 @@
 #ifndef REALM_WEAK_REALM_NOTIFIER_BASE_HPP
 #define REALM_WEAK_REALM_NOTIFIER_BASE_HPP
 
+#include "util/thread_id.hpp"
+
 #include <memory>
-#include <thread>
 
 namespace realm {
 class Realm;
@@ -40,7 +41,7 @@ public:
     std::shared_ptr<Realm> realm() const { return m_realm.lock(); }
 
     // Does this WeakRealmNotifierBase store a Realm instance that should be used on the current thread?
-    bool is_cached_for_current_thread() const { return m_cache && m_thread_id == std::this_thread::get_id(); }
+    bool is_cached_for_current_thread() const { return m_cache && m_thread_id == util::get_thread_id(); }
 
     // Has the Realm instance been destroyed?
     bool expired() const { return m_realm.expired(); }
@@ -50,7 +51,7 @@ public:
 
 private:
     std::weak_ptr<Realm> m_realm;
-    std::thread::id m_thread_id = std::this_thread::get_id();
+    thread_id_t m_thread_id = util::get_thread_id();
     void* m_realm_key;
     bool m_cache = false;
 };

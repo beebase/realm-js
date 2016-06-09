@@ -179,6 +179,8 @@
 		F620F0571CB766DA0082977B /* node_init.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_init.cpp; sourceTree = "<group>"; };
 		F620F0591CB7B4C80082977B /* js_object_accessor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = js_object_accessor.hpp; sourceTree = "<group>"; };
 		F620F0741CB9F60C0082977B /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		F6242B281D08EE3900BE1E03 /* atomic_shared_ptr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = atomic_shared_ptr.hpp; sourceTree = "<group>"; };
+		F6242B291D08EE9600BE1E03 /* thread_id.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = thread_id.hpp; sourceTree = "<group>"; };
 		F6267BC91CADC30000AC36B1 /* js_util.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = js_util.hpp; sourceTree = "<group>"; };
 		F6267BCA1CADC49200AC36B1 /* node_dummy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_dummy.cpp; sourceTree = "<group>"; };
 		F62BF8FB1CAC71780022BCDC /* libRealmNode.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libRealmNode.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -347,6 +349,16 @@
 			path = data;
 			sourceTree = "<group>";
 		};
+		F6242B271D08EE1000BE1E03 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				F6242B281D08EE3900BE1E03 /* atomic_shared_ptr.hpp */,
+				F6242B291D08EE9600BE1E03 /* thread_id.hpp */,
+			);
+			name = util;
+			path = src/util;
+			sourceTree = "<group>";
+		};
 		F62A35131C18E6E2004A917D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +374,7 @@
 			children = (
 				F63117EA1CEB0BFA00ECB2DE /* impl */,
 				F63117EC1CEB0C8100ECB2DE /* parser */,
+				F6242B271D08EE1000BE1E03 /* util */,
 				02414B961CE6AADD00A8669F /* collection_notifications.cpp */,
 				02414B971CE6AADD00A8669F /* collection_notifications.hpp */,
 				02F59EAE1C88F17D007F774C /* binding_context.hpp */,
